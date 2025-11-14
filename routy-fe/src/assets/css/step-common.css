@@ -1,0 +1,73 @@
+/* 페이지 래퍼: 헤더 아래 영역 전체 */
+.step-container {
+  margin-top: -30px;
+  min-height: calc(100vh - 80px); /* 헤더 높이만큼 조정 필요시 숫자 바꿔주세요 */
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* 수평 중앙 */
+  align-items: flex-start;
+  padding: 40px 16px;        /* 가로 패딩은 고정(px)로 */
+}
+
+/* 중앙 콘텐츠(진짜 중앙 잡는 곳) */
+.step-content {
+  width: 100%;
+  max-width: 960px;          /* 중앙 기준선 */
+  margin: 0 auto;            /* 중앙 정렬 핵심 */
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* 상단 단계 */
+.step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.step-number { color:#4A5565; font-size:16px; }
+.cancel-btn { border:0; background:transparent; font-size:14px; cursor:pointer; }
+
+/* 진행바 */
+.progress-bar {
+  height: 8px;
+  background: #E5E7EB;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 8px;
+  width: 25%;
+  background: linear-gradient(90deg, #155DFC, #00A63E);
+}
+.progress-fill.step2 { width: 50%; }
+.progress-fill.step3 { width: 75%; }
+.progress-fill.step4 { width: 100%; }
+
+/* 카드 */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.1);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 하단 버튼 */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.prev-btn, .next-btn {
+  width: 80px; height: 36px; border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #fff;
+}
+.next-btn {
+  background: #155DFC; color:#fff; border:none;
+  opacity:.5; cursor:not-allowed; transition:.2s;
+}
+.next-btn:not(:disabled){ opacity:1; cursor:pointer; }

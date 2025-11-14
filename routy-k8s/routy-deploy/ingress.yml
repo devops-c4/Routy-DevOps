@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: routy-ingress
+  annotations:
+    # ArgoCD 전용 어노테이션
+    argocd.argoproj.io/sync-wave: "5"  # 배포 순서: 5 (마지막)
+    # NGINX Ingress Controller 전용 어노테이션
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx  
+  rules:
+  - http:
+      paths:
+      - path: /()(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: routy-frontend-ser
+            port: 
+              number: 8000
+      - path: /api(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: routy-backend-ser
+            port: 
+              number: 8001

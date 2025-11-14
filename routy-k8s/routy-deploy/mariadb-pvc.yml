@@ -1,0 +1,34 @@
+
+# --- MariaDB 데이터 저장용 PVC ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-data-pvc
+  annotations:
+    # ArgoCD 전용 어노테이션 (선택 사항, kubectl로 배포 시 무시됨)
+    argocd.argoproj.io/sync-wave: "1"  # 배포 순서: 1 (가장 먼저)
+spec:
+  accessModes:
+    - ReadWriteOnce  # 단일 노드에서 읽기/쓰기
+  resources:
+    requests:
+      storage: 2Gi  # 1 GiB (데이터베이스 파일)
+  storageClassName: hostpath  # Docker Desktop Kubernetes
+
+---
+
+# --- MariaDB 로그 저장용 PVC ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-logs-pvc
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"  # 배포 순서: 1 (데이터 PVC와 함께)
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi  # 500 MiB (로그 파일)
+  storageClassName: hostpath
+

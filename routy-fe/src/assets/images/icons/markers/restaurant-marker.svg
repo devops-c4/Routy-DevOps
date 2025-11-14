@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Routy Restaurant Pin - Bright Pink -->
+  <!-- Pin -->
+  <path d="M32 4C21.507 4 13 12.507 13 23c0 12.459 14.57 29.207 17.94 33.01a2.5 2.5 0 0 0 3.12 0C36.43 52.207 51 35.459 51 23 51 12.507 42.493 4 32 4Z" fill="#D977E0"/>
+  <!-- Inner circle -->
+  <circle cx="32" cy="23" r="14" stroke="#FFFFFF" stroke-width="2.5" fill="none"/>
+  <!-- Fork and Knife -->
+  <rect x="26" y="18" width="2" height="12" rx="0.5" fill="#FFFFFF"/>
+  <path d="M28 18v4c0 1.5 1 2 2 2h1v6h-3V18Z" fill="#FFFFFF"/>
+  <rect x="34" y="18" width="2" height="12" rx="0.5" fill="#FFFFFF"/>
+  <rect x="37" y="18" width="2" height="12" rx="0.5" fill="#FFFFFF"/>
+  <rect x="34" y="24" width="5" height="2" fill="#FFFFFF"/>
+</svg>

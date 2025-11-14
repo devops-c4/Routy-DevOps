@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: routy-frontend-dep
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"  # 배포 순서: 4 (Backend 준비 후)
+spec:
+  selector:
+    matchLabels:
+      app: routyfrontenddep
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: routyfrontenddep
+    spec:
+      containers:
+      - name: routy-frontend-container
+        image: bynmch/routy_front:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80      # 5173이 아니라 80으로 바꿔야 한다.

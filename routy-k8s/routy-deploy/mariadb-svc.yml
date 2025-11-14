@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: routy-mariadb-ser
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"  # 배포 순서: 2 (Deployment와 함께)
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3310        # 외부에서 접근할 포트
+    targetPort: 3306  # 컨테이너 내부 포트
+  selector:
+    app: routymariadbdep   # mariadb-deploy.yml의 label과 일치
+

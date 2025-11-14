@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: routy-mariadb-dep
+  annotations:
+    # ArgoCD 전용 어노테이션 (선택 사항)
+    # sync-wave 없이도 동작하지만, PVC 생성 후 배포를 보장하기 위해 사용
+    argocd.argoproj.io/sync-wave: "2"  # 배포 순서: 2 (PVC 이후)
+spec:
+  selector:
+    matchLabels:
+      app: routymariadbdep # label과 반드시 똑같아야함.
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: routymariadbdep
+    spec:
+      containers:
+      - name:  routy-mariadbdep-container
+        image: mariadb:latest
+        env:
+        - name: MARIADB_ROOT_PASSWORD
+          value: "root1234"
+        - name: MARIADB_DATABASE
+          value: "routy"
+        ports:
+        - containerPort: 3306
+        args:
+        - --log-error=/var/log/mysql/error.log
+        - --general-log=1
+        - --general-log-file=/var/log/mysql/general.log
+        - --slow-query-log=1
+        - --slow-query-log-file=/var/log/mysql/slow.log
+        - --long-query-time=2
+        volumeMounts:
+        - name: routy-mariadb-data
+          mountPath: /var/lib/mysql
+        - name: routy-mariadb-logs
+          mountPath: /var/log/mysql
+        # Health Check - DB가 완전히 준비되었는지 확인
+        livenessProbe:
+          exec:
+            command:
+            - healthcheck.sh
+            - --connect
+            - --innodb_initialized
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 5
+        readinessProbe:
+          exec:
+            command:
+            - healthcheck.sh
+            - --connect
+            - --innodb_initialized
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 5
+      volumes:
+      - name: routy-mariadb-data
+        persistentVolumeClaim:
+          claimName: mariadb-data-pvc
+      - name: routy-mariadb-logs
+        persistentVolumeClaim:
+          claimName: mariadb-logs-pvc
+

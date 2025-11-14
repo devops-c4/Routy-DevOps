@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: routy-backend-dep
+  annotations:
+    argocd.argoproj.io/sync-wave: "3" 
+spec:
+  selector:
+    matchLabels:
+      app: routybackenddep
+  # replicas: 3
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: routybackenddep
+    spec:
+      containers:
+      - name: routy-backend-container
+        image: bynmch/routy_back:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 7777
+        # MariaDB 연결을 위한 환경변수 설정
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mariadb://routy-mariadb-ser:3310/routy"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "root"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "root1234"
+        # Health Check - Spring Boot가 정상 실행되는지 확인
+        readinessProbe:
+          httpGet:
+            path: /auth/health
+            port: 7777
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /auth/health
+            port: 7777
+          initialDelaySeconds: 60
+          periodSeconds: 15
+          timeoutSeconds: 5
+          failureThreshold: 3
