@@ -56,8 +56,16 @@
 <br>
 
 ## Git 협업 전략
-https://github.com/devops-c4/Routy-FE/pulls?q=is%3Apr+is%3Aclosed
-https://github.com/devops-c4/Routy-BE/pulls?q=is%3Apr+is%3Aclosed
+<a href="https://github.com/devops-c4/Routy-FE/pulls" style="text-decoration:none; color:inherit;">
+  FE Pull Requests
+</a><br>
+
+<a href="https://github.com/devops-c4/Routy-BE/pulls" style="text-decoration:none; color:inherit;">
+  BE Pull Requests
+</a>
+
+<br>
+<br>
 
 ## 📜 목차
 
