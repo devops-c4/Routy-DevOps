@@ -157,14 +157,16 @@
 
 ## 📙 WBS
 <div align="center">
-  <img width="1335" height="835" alt="image" src="https://github.com/user-attachments/assets/0e0038b1-6d07-4f29-8e6c-ddfdf0c43a55" />
+<img width="863" height="539" alt="스크린샷 2025-11-17 오후 1 52 05" src="https://github.com/user-attachments/assets/33c7c144-6b6c-4260-8012-d80c4c5c39c2" />
 </div>
+
 
 <br>
 
 ## 🔡 요구 사항 명세서
 <div align="center">
-  <img width="1335" height="835" alt="스크린샷 2025-11-17 오전 2 46 44" src="https://github.com/user-attachments/assets/265ac0ac-e0dd-4d1e-9494-1b25d86b7458" />
+  <img width="848" height="668" alt="스크린샷 2025-11-17 오후 1 51 09" src="https://github.com/user-attachments/assets/3621db26-a3b7-4ecb-8b6d-d0e340d85ee3" />
+
 </div>
 
 <br>
