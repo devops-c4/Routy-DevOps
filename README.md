@@ -55,6 +55,10 @@
 
 <br>
 
+## Git 협업 전략
+https://github.com/devops-c4/Routy-FE/pulls?q=is%3Apr+is%3Aclosed
+https://github.com/devops-c4/Routy-BE/pulls?q=is%3Apr+is%3Aclosed
+
 ## 📜 목차
 
 #### [💡 기술 스택](#-기술-스택)  <br>
