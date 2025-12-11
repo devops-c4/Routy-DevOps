@@ -1,0 +1,201 @@
+INSERT INTO tbl_plan (
+    plan_title,
+    is_public,
+    start_date,
+    end_date,
+    is_deleted,
+    created_at,
+    updated_at,
+    bookmark_count,
+    view_count,
+    region_id,
+    user_id,
+    theme  /* 추가 */
+) VALUE
+('부산 여행', 0, '2025-10-01', '2025-10-02', 0, '2025-09-20', NULL, 0, 0, 2, 11, 'cafe');
+
+INSERT INTO tbl_duration (day, plan_id) VALUE
+(1, 11),
+(1, 11);
+
+INSERT INTO tbl_travel (
+travel_order,
+estimated_travel_time,
+place_name,
+start_time,
+end_time,
+latitude,
+longitude,
+category_code,
+category_group_name,
+address_name,
+place_url,
+description,
+image_path,
+run_time,
+duration_id
+) VALUES
+(1, 0, '카페베이스', NULL, NULL, 35.21513919, 129.22397536, 'CE7', '카페', NULL, 'http://place.map.kakao.com/780008377', '음식점 > 카페', NULL, NULL, 11),
+(2, 0, '모모스커피 도모헌점', NULL, NULL, 35.14701664, 129.10741437, 'CE7', '카페', NULL, 'http://place.map.kakao.com/808807331', '음식점 > 카페 > 커피전문점', NULL, NULL, 11),
+(3, 0, '메이리', NULL, NULL, 35.18028355, 129.07286017, 'FD6', '음식점', NULL, 'http://place.map.kakao.com/1404724633', '음식점 > 중식 > 중국요리', NULL, NULL, 11),
+(1, 0, '사이먼커피', NULL, NULL, 35.18235760, 129.07908592, 'FD7', '카페', NULL, 'http://place.map.kakao.com/1291556690', '음식점 > 카페 > 커피전문점', NULL, NULL, 12),
+(2, 0, '후스', NULL, NULL, 35.18151403, 129.07467835, 'FD7', '카페', NULL, 'http://place.map.kakao.com/21722717', '음식점 > 카페', NULL, NULL, 12),
+(3, 0, '라운지', NULL, NULL, 35.18252472, 129.07963899, 'FD7', '카페', NULL, 'http://place.map.kakao.com/1871024062', '음식점 > 카페', NULL, NULL, 12);
+
+INSERT INTO tbl_travel (
+    travel_order,
+    estimated_travel_time,
+    place_name,
+    start_time,
+    end_time,
+    latitude,
+    longitude,
+    category_code,
+    category_group_name,
+    address_name,
+    place_url,
+    description,
+    image_path,
+    run_time,
+    duration_id
+) VALUES
+(1, 0, '카페베이스', NULL, NULL, 35.21513919, 129.22397536, 'CE7', '카페', NULL, 'http://place.map.kakao.com/780008377', '음식점 > 카페', NULL, NULL, 11),
+(2, 0, '모모스커피 도모헌점', NULL, NULL, 35.14701664, 129.10741437, 'CE7', '카페', NULL, 'http://place.map.kakao.com/808807331', '음식점 > 카페 > 커피전문점', NULL, NULL, 11),
+(3, 0, '메이리', NULL, NULL, 35.18028355, 129.07286017, 'FD6', '음식점', NULL, 'http://place.map.kakao.com/1404724633', '음식점 > 중식 > 중국요리', NULL, NULL, 11),
+(1, 0, '사이먼커피', NULL, NULL, 35.18235760, 129.07908592, 'FD7', '카페', NULL, 'http://place.map.kakao.com/1291556690', '음식점 > 카페 > 커피전문점', NULL, NULL, 12),
+(2, 0, '후스', NULL, NULL, 35.18151403, 129.07467835, 'FD7', '카페', NULL, 'http://place.map.kakao.com/21722717', '음식점 > 카페', NULL, NULL, 12),
+(3, 0, '라운지', NULL, NULL, 35.18252472, 129.07963899, 'FD7', '카페', NULL, 'http://place.map.kakao.com/1871024062', '음식점 > 카페', NULL, NULL, 12);
+
+
+INSERT INTO tbl_plan (plan_title, is_public, start_date, end_date, is_deleted, created_at, updated_at, bookmark_count, view_count, region_id, user_id, theme) VALUES
+('인천 여행', 0, '2025-10-25', '2025-10-26', 0, '2025-10-14', NULL, 0, 0, 4, 11, 'cafe'),
+('대구 여행', 0, '2025-10-18', '2025-10-21', 0, '2025-10-14', NULL, 0, 0, 3, 11, 'restaurant'),
+('울산 여행', 0, '2025-11-09', '2025-11-11', 0, '2025-10-14', NULL, 0, 0, 7, 11, 'restaurant'),
+('세종 여행', 0, '2025-10-23', '2025-10-24', 0, '2025-10-14', NULL, 0, 0, 8, 11, 'cafe'),
+('전주 여행', 0, '2025-08-20', '2025-08-21', 0, '2025-08-14', NULL, 0, 0, 15, 11, 'tourist'),
+('단양 여행', 0, '2024-01-14', '2024-01-15', 0, '2024-11-14', NULL, 0, 0, 70, 11, 'restaurant'),
+('밀양 여행', 0, '2024-12-09', '2024-12-11', 0, '2024-11-14', NULL, 0, 0, 60, 11, 'tourist'),
+('광주(경기) 여행', 0, '2024-12-31', '2024-01-01', 0, '2024-11-14', NULL, 0, 0, 134, 11, 'cafe'),
+('하남 여행', 0, '2025-09-24', '2025-09-25', 0, '2025-09-14', NULL, 0, 0, 98, 11, 'cafe');
+
+
+INSERT INTO tbl_duration (day, plan_id) VALUES
+(1, 12), (2, 12),
+(1, 13), (2, 13), (3, 13), (4, 13),
+(1, 14), (2, 14), (3, 14), 
+(1, 15), (2, 15),
+(1, 16), (2, 16),
+(1, 17), (2, 17),
+(1, 18), (2, 18), (3, 18),
+(1, 19), (2, 19),
+(1, 20), (2, 20);
+
+
+INSERT INTO tbl_travel (travel_order, estimated_travel_time, place_name, latitude, longitude, category_code, category_group_name, address_name, place_url, description, image_path, run_time, start_time, end_time, duration_id) VALUES
+(1,0,'코스모40',37.48651327,126.67791127,'CE7','카페','인천 서구 장고개로231번길 9','http://place.map.kakao.com/1119761448','음식점 > 카페',NULL,NULL,NULL,NULL,13),
+(2,0,'파운드바베큐',37.48716068,126.67974927,'FD6','음식점','인천 서구 원적로 1','http://place.map.kakao.com/835676564','음식점 > 양식',NULL,NULL,NULL,NULL,13),
+(3,0,'함봉산',37.48571675,126.69105880,'AT4','관광명소','인천 서구 가좌동 산 192-6','http://place.map.kakao.com/230333293','여행 > 관광,명소 > 산',NULL,NULL,NULL,NULL,13),
+(4,0,'뒷산',37.48155140,126.68899449,'AT4','관광명소','인천 서구 가좌동','http://place.map.kakao.com/25222213','여행 > 관광,명소 > 산',NULL,NULL,NULL,NULL,13),
+(1,0,'연초롱도예공방',37.48784716,126.70138810,'AT4','관광명소','인천 부평구 화랑로47번길 7-8','http://place.map.kakao.com/24528494','여행 > 관광,명소 > 도자기,도예촌',NULL,NULL,NULL,NULL,14),
+(2,0,'벽화거리',37.48209161,126.70035161,'AT4','관광명소','인천 부평구 십정동 산 6-13','http://place.map.kakao.com/19180535','여행 > 관광,명소 > 테마거리',NULL,NULL,NULL,NULL,14),
+(3,0,'봄',37.48136286,126.69548046,'CE7','카페','인천 부평구 함봉로 31','http://place.map.kakao.com/571852452','음식점 > 카페',NULL,NULL,NULL,NULL,14),
+(4,0,'카페마나',37.47873906,126.69896761,'CE7','카페','인천 부평구 상정로 49','http://place.map.kakao.com/1359506651','음식점 > 카페 > 커피전문점',NULL,NULL,NULL,NULL,14),
+(5,0,'돈타래게장정식',37.47297411,126.69955372,'FD6','음식점','인천 부평구 열우물로 59','http://place.map.kakao.com/1757328685','음식점 > 한식',NULL,NULL,NULL,NULL,14),
+(6,0,'향나무집',37.48278928,126.69518071,'FD6','음식점','인천 부평구 함봉로36번길 19-6','http://place.map.kakao.com/19027222','음식점 > 한식 > 사철탕,영양탕',NULL,NULL,NULL,NULL,14),
+(1,0,'진해숯불막창',35.85716574,128.57453379,'FD6','맛집','대구 남구 성당로 272','http://place.map.kakao.com/21317846','음식점 > 한식 > 육류,고기 > 곱창,막창',NULL,NULL,NULL,NULL,15),
+(2,0,'금강장어회해산물천국',35.86748359,128.60262602,'FD6','맛집','대구 중구 공평로10길 50','http://place.map.kakao.com/14510856','음식점 > 한식 > 해물,생선 > 장어',NULL,NULL,NULL,NULL,15),
+(1,0,'동아식당',35.87104715,128.59894232,'FD6','음식점','대구 중구 국채보상로125길 14','http://place.map.kakao.com/1933999479','음식점 > 한식 > 국수',NULL,NULL,NULL,NULL,16),
+(2,0,'부산안면옥',35.87060721,128.59895562,'FD6','음식점','대구 중구 국채보상로125길 4-1','http://place.map.kakao.com/10466328','음식점 > 한식 > 냉면',NULL,NULL,NULL,NULL,16),
+(1,0,'국일따로국밥',35.87108707,128.59322575,'FD6','음식점','대구 중구 국채보상로 571','http://place.map.kakao.com/21227749','음식점 > 한식 > 국밥',NULL,NULL,NULL,NULL,17),
+(2,0,'중앙떡볶이',35.86945422,128.59702375,'FD6','음식점','대구 중구 동성로2길 81','http://place.map.kakao.com/10787627','음식점 > 분식 > 떡볶이',NULL,NULL,NULL,NULL,17),
+(3,0,'동인동찜갈비골목',35.87112799,128.60504217,'AT4','관광명소','대구 중구 동덕로36길 9-17','http://place.map.kakao.com/14704805','여행 > 관광,명소 > 테마거리 > 먹자골목',NULL,NULL,NULL,NULL,17),
+(4,0,'대구근대화골목',35.87152102,128.59094482,'AT4','관광명소','대구 중구 서문로1가 84','http://place.map.kakao.com/26558550','여행 > 관광,명소 > 테마거리',NULL,NULL,NULL,NULL,17),
+(1,0,'크레이지팡팡',35.86881518,128.59302969,'AT4','관광명소','대구 중구 진골목길 32','http://place.map.kakao.com/1422899806','여행 > 관광,명소 > 테마파크',NULL,NULL,NULL,NULL,18),
+(2,0,'동성로로데오거리',35.86620939,128.59870340,'AT4','관광명소','대구 중구 삼덕동1가 83','http://place.map.kakao.com/298128811','여행 > 관광,명소 > 테마거리',NULL,NULL,NULL,NULL,18),
+(3,0,'레드버튼 동성로2호점',35.86799212,128.59814138,'CE7','카페','대구 중구 동성로3길 62','http://place.map.kakao.com/1610277117','가정,생활 > 여가시설 > 보드카페 > 레드버튼',NULL,NULL,NULL,NULL,18),
+(4,0,'전원돈까스',35.86796065,128.59549252,'FD6','음식점','대구 중구 동성로6길 2-23','http://place.map.kakao.com/10091825','음식점 > 일식 > 돈까스,우동',NULL,NULL,NULL,NULL,18),
+(1,0,'율리정',35.52947161,129.22792621,'FD6','맛집','울산 울주군 청량읍 율리영해1길 170-6','http://place.map.kakao.com/559897338','음식점 > 한식 > 한정식',NULL,NULL,NULL,NULL,19),
+(2,0,'함양집',35.53990914,129.31423072,'FD6','음식점','울산 남구 중앙로208번길 12','http://place.map.kakao.com/16318925','음식점 > 한식',NULL,NULL,NULL,NULL,19),
+(3,0,'램넌트게스트하우스',35.53942889,129.30845014,NULL,'숙박','울산 남구 돋질로31번길 25-1','http://place.map.kakao.com/25741899','',NULL,NULL,NULL,NULL,19),
+(4,0,'옹기골식당',35.53697762,129.31035094,'FD6','음식점','울산 남구 삼산로35번길 42','http://place.map.kakao.com/342831629','음식점 > 한식',NULL,NULL,NULL,NULL,19),
+(5,0,'울산밀면전문점 본점',35.54168613,129.30990395,'FD6','음식점','울산 남구 월평로 39','http://place.map.kakao.com/642734410','음식점 > 한식 > 국수',NULL,NULL,NULL,NULL,19),
+(6,0,'스타벅스 울산시청사거리DT점',35.53720477,129.31354117,'CE7','카페','울산 남구 중앙로 180','http://place.map.kakao.com/1399765274','음식점 > 카페 > 커피전문점 > 스타벅스',NULL,NULL,NULL,NULL,19),
+(1,0,'투썸플레이스 울산시청점',35.53554834,129.31360272,'CE7','카페','울산 남구 중앙로 163','http://place.map.kakao.com/24181928','음식점 > 카페 > 커피전문점 > 투썸플레이스',NULL,NULL,NULL,NULL,20),
+(2,0,'스타벅스 울산시청사거리DT점',35.53720477,129.31354117,'CE7','카페','울산 남구 중앙로 180','http://place.map.kakao.com/1399765274','음식점 > 카페 > 커피전문점 > 스타벅스',NULL,NULL,NULL,NULL,20),
+(1,0,'ppl',35.53955345,129.31360865,'CE7','카페','울산 남구 중앙로204번길 9','http://place.map.kakao.com/1146339904','음식점 > 카페',NULL,NULL,NULL,NULL,21),
+(2,0,'함양집',35.53990914,129.31423072,'FD6','음식점','울산 남구 중앙로208번길 12','http://place.map.kakao.com/16318925','음식점 > 한식',NULL,NULL,NULL,NULL,21),
+(3,0,'종가돼지국밥',35.54052764,129.31111206,'FD6','음식점','울산 남구 중앙로223번길 1','http://place.map.kakao.com/16868722','음식점 > 한식 > 국밥',NULL,NULL,NULL,NULL,21),
+(1,0,'이도커피 본점',36.47475489,127.29524563,'CE7','카페','세종특별자치시 금남면 금남구즉로 152','http://place.map.kakao.com/885395658','음식점 > 카페',NULL,NULL,NULL,NULL,22),
+(2,0,'카페비일상',36.47301064,127.29870913,'CE7','카페','세종특별자치시 금남면 호탄길 48','http://place.map.kakao.com/558783317','음식점 > 카페',NULL,NULL,NULL,NULL,22),
+(3,0,'카페용담',36.42259379,127.28410698,'CE7','카페','세종특별자치시 금남면 안금로 257','http://place.map.kakao.com/547288210','음식점 > 카페',NULL,NULL,NULL,NULL,22),
+(4,0,'투썸플레이스 세종신흥점',36.59212808,127.28777573,'CE7','카페','세종특별자치시 조치원읍 이화로 34','http://place.map.kakao.com/165775439','음식점 > 카페 > 커피전문점 > 투썸플레이스',NULL,NULL,NULL,NULL,22),
+(1,0,'놀숲 세종시청점',36.47817126,127.29006982,'CE7','카페','세종특별자치시 호려울로 45','http://place.map.kakao.com/1771700295','가정,생활 > 여가시설 > 만화방 > 만화카페 > 놀숲',NULL,NULL,NULL,NULL,23),
+(2,0,'우리끼리키즈카페 자동차마을 세종시청점',36.47795582,127.28935264,'CE7','카페','세종특별자치시 호려울로 51','http://place.map.kakao.com/774778576','가정,생활 > 유아 > 놀이시설 > 키즈카페 > 우리끼리',NULL,NULL,NULL,NULL,23),
+(3,0,'이도커피 본점',36.47475489,127.29524563,'CE7','카페','세종특별자치시 금남면 금남구즉로 152','http://place.map.kakao.com/885395658','음식점 > 카페',NULL,NULL,NULL,NULL,23),
+(1,0,'전주동물원',35.85520353,127.14438893,'AT4','관광지','전북특별자치도 전주시 덕진구 소리로 68','http://place.map.kakao.com/8536416','여행 > 관광,명소 > 동물원',NULL,NULL,NULL,NULL,24),
+(2,0,'전주왱이콩나물국밥전문점',35.81828668,127.14917875,'FD6','음식점','전북특별자치도 전주시 완산구 동문길 88','http://place.map.kakao.com/26615208','음식점 > 한식 > 국밥',NULL,NULL,NULL,NULL,24),
+(3,0,'백송회관',35.82343022,127.149143,'FD6','음식점','전북특별자치도 전주시 완산구 기린대로 177','http://place.map.kakao.com/18409382','음식점 > 한식',NULL,NULL,NULL,NULL,24),
+(4,0,'전주한옥마을 전망대카페',35.81777150,127.15391715,'CE7','카페','전북특별자치도 전주시 완산구 어진길 15','http://place.map.kakao.com/1595025887','음식점 > 카페',NULL,NULL,NULL,NULL,24),
+(1,0,'걷고싶은거리',35.81847567,127.14573105,'AT4','관광명소','전북특별자치도 전주시 완산구 경원동1가 129','http://place.map.kakao.com/973503311','여행 > 관광,명소 > 테마거리',NULL,NULL,NULL,NULL,25),
+(2,0,'우체국사거리',35.81736650,127.14624136,'AT4','관광명소','전북특별자치도 전주시 완산구 전라감영5길 20','http://place.map.kakao.com/803739190','여행 > 관광,명소 > 테마거리',NULL,NULL,NULL,NULL,25),
+(1,0,'보리곳간',37.02613336,128.38479895,'FD6','맛집','충북 단양군 가곡면 사평3길 6-1','http://place.map.kakao.com/2032941749','음식점 > 한식',NULL,NULL,NULL,NULL,26),
+(2,0,'단양민물매운탕쏘가리',36.98435228,128.37094101,'FD6','맛집','충북 단양군 단양읍 수변로 99','http://place.map.kakao.com/1244181834','음식점 > 한식 > 해물,생선 > 매운탕,해물탕',NULL,NULL,NULL,NULL,26),
+(3,0,'그집쏘가리',36.98409209,128.37100148,'FD6','음식점','충북 단양군 단양읍 수변로 97','http://place.map.kakao.com/8811558','음식점 > 한식 > 해물,생선 > 매운탕,해물탕',NULL,NULL,NULL,NULL,26),
+(4,0,'단양팔각정',36.98391739,128.37091523,'FD6','음식점','충북 단양군 단양읍 별곡10길 6','http://place.map.kakao.com/11833936','음식점 > 한식 > 한정식',NULL,NULL,NULL,NULL,26),
+(1,0,'금강반점',37.08091085,128.48399448,'FD6','음식점','충북 단양군 영춘면 온달평강로 84','http://place.map.kakao.com/14493335','음식점 > 중식 > 중국요리',NULL,NULL,NULL,NULL,27),
+(2,0,'소백산자연휴양림',37.06065872,128.46731638,'AT4','관광명소','충북 단양군 영춘면 하리방터길 180','http://place.map.kakao.com/847185992','여행 > 관광,명소 > 자연휴양림',NULL,NULL,NULL,NULL,27),
+(1,0,'위양지',35.54612528,128.71636735,'AT4','관광지','경남 밀양시 부북면 위양리 294','http://place.map.kakao.com/8482507','여행 > 관광,명소 > 저수지',NULL,NULL,NULL,NULL,28),
+(2,0,'밀양돼지국밥전문',35.49848647,128.74557526,'FD6','음식점','경남 밀양시 북성로 28','http://place.map.kakao.com/17464990','음식점 > 한식 > 국밥',NULL,NULL,NULL,NULL,28),
+(1,0,'밀양인삼돼지국밥',35.49997601,128.74601744,'FD6','음식점','경남 밀양시 백민로 83','http://place.map.kakao.com/19153465','음식점 > 한식 > 국밥',NULL,NULL,NULL,NULL,29),
+(2,0,'일품 이로정',35.49928480,128.74620525,'FD6','음식점','경남 밀양시 백민로 75-1','http://place.map.kakao.com/706936489','음식점 > 한식 > 해물,생선 > 추어',NULL,NULL,NULL,NULL,29),
+(1,0,'밀양돼지국밥전문',35.49848647,128.74557526,'FD6','음식점','경남 밀양시 북성로 28','http://place.map.kakao.com/17464990','음식점 > 한식 > 국밥',NULL,NULL,NULL,NULL,30),
+(2,0,'장사부 밀양본점',35.49160700,128.74967532,'FD6','음식점','경남 밀양시 남천강변로3길 9-1','http://place.map.kakao.com/1555453203','음식점 > 중식 > 중국요리',NULL,NULL,NULL,NULL,30),
+(1,0,'카페게이트 경기광주양벌점',37.37810556,127.25636830,'CE7','카페','경기 광주시 마루들길 223','http://place.map.kakao.com/1164595178','음식점 > 카페 > 커피전문점 > 카페게이트',NULL,NULL,NULL,NULL,31),
+(2,0,'밀목손만두얼큰칼국수',37.43134599,127.25919024,'FD6','음식점','경기 광주시 회안대로 949','http://place.map.kakao.com/27561195','음식점 > 한식 > 국수 > 칼국수',NULL,NULL,NULL,NULL,31),
+(3,0,'송정동코다리',37.42915130,127.25074965,'FD6','음식점','경기 광주시 행정타운로 68','http://place.map.kakao.com/1131993794','음식점 > 한식 > 해물,생선',NULL,NULL,NULL,NULL,31),
+(1,0,'솔치고개',37.42921151,127.25835359,'FD6','음식점','경기 광주시 중앙로335번길 1','http://place.map.kakao.com/1753645792','음식점 > 한식',NULL,NULL,NULL,NULL,32),
+(2,0,'밀목손만두얼큰칼국수',37.43134599,127.25919024,'FD6','음식점','경기 광주시 회안대로 949','http://place.map.kakao.com/27561195','음식점 > 한식 > 국수 > 칼국수',NULL,NULL,NULL,NULL,32),
+(1,0,'시오스카페',37.53681702,127.20963530,'CE7','카페','경기 하남시 하남대로739번길 70','http://place.map.kakao.com/914575131','음식점 > 카페',NULL,NULL,NULL,NULL,33),
+(2,0,'오브제커피',37.56129263,127.19104014,'CE7','카페','경기 하남시 미사강변중앙로 164','http://place.map.kakao.com/1941174672','음식점 > 카페 > 커피전문점',NULL,NULL,NULL,NULL,33),
+(1,0,'랑데부호텔',37.54120439,127.21492045,NULL,'숙박','경기 하남시 하남대로776번길 88','http://place.map.kakao.com/1478278196','',NULL,NULL,NULL,NULL,34),
+(2,0,'카페오마르',37.49325307,127.23435359,'CE7','카페','경기 하남시 하남대로198번길 10','http://place.map.kakao.com/21222604','음식점 > 카페',NULL,NULL,NULL,NULL,34),
+(3,0,'용마산',37.49099276,127.25921981,'AT4','관광명소','경기 광주시 남종면 삼성리','http://place.map.kakao.com/14565822','여행 > 관광,명소 > 산',NULL,NULL,NULL,NULL,34),
+(4,0,'청정하남블루베리',37.50122396,127.22046489,'AT4','관광명소','경기 하남시 산곡북로 137','http://place.map.kakao.com/1345012296','여행 > 관광,명소 > 관광농원',NULL,NULL,NULL,NULL,34);
+
+INSERT INTO tbl_review (
+content,
+created_at,
+updated_at,
+rating,
+is_deleted,
+plan_id,
+user_id
+) VALUES
+('울산 좋았어요', '2025-11-14', NULL, 7, 0, 14, 11),
+('인천 좋았어', '2025-11-14', '2025-11-14', 10, 0, 12, 11),
+('세종 좋았어', '2025-11-14', '2025-11-14', 6, 0, 15, 11),
+('대구 좋았어요', '2025-11-14', '2025-11-14', 5, 0, 13, 11),
+('부산 좋았어요', '2025-11-14', NULL, 7, 0, 11, 11),
+('하남 좋아', '2025-11-14', '2025-11-14', 10, 0, 20, 11),
+('밀야야양', '2025-11-14', NULL, 5, 0, 18, 11),
+('단양야야야\n좋아아아', '2025-11-14', NULL, 6, 0, 17, 11),
+('광주(경기)', '2025-11-14', NULL, 5, 0, 19, 11),
+('전주다!', '2025-11-14', NULL, 7, 0, 16, 11);
+
+insert into tbl_reviewfiles (
+    file_name,
+    file_rename,
+    file_path,
+    is_deleted,
+    review_id
+) VALUES
+('울산.jpg', 'review-images/0fb3bee2-2b5d-4a88-978f-9056900fa0af.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/0fb3bee2-2b5d-4a88-978f-9056900fa0af.jpg', 0, 11),
+('인천3.jpg', 'review-images/76daa3a1-401e-49e4-b1c4-c663b48d7b84.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/76daa3a1-401e-49e4-b1c4-c663b48d7b84.jpg', 0, 12),
+('세종.jpg', 'review-images/6b80d302-2d5d-4997-97b0-2295dcb4f696.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/6b80d302-2d5d-4997-97b0-2295dcb4f696.jpg', 0, 13),
+('eorn.jpg', 'review-images/8b2908d7-4aec-4dc6-9d85-7839fb7a9491.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/8b2908d7-4aec-4dc6-9d85-7839fb7a9491.jpg', 0, 14),
+('다운로드.jpg', 'review-images/4137eb31-9e18-4c28-ae68-aba4c680b5c4.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/4137eb31-9e18-4c28-ae68-aba4c680b5c4.jpg', 0, 15),
+('하남.jpg', 'review-images/4265e737-a39b-4949-af31-59050e7da5cf.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/4265e737-a39b-4949-af31-59050e7da5cf.jpg', 0, 16),
+('밀양.jpg', 'review-images/a1261fea-05ff-4785-af2e-fff120646d12.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/a1261fea-05ff-4785-af2e-fff120646d12.jpg', 0, 17),
+('eksdid.jpg', 'review-images/1a15dccb-a0f9-4d5b-9fdb-37e95a36a32c.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/1a15dccb-a0f9-4d5b-9fdb-37e95a36a32c.jpg', 0, 18),
+('광주 경기.jpg', 'review-images/ce798d96-0d01-465f-8364-6a7cd1b4a74e.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/ce798d96-0d01-465f-8364-6a7cd1b4a74e.jpg', 0, 19),
+('wjswn.jpg', 'review-images/24b58324-8a1e-4fe8-83cb-d7b2238a219f.jpg', 'https://routy-service.s3.ap-northeast-2.amazonaws.com/review-images/24b58324-8a1e-4fe8-83cb-d7b2238a219f.jpg', 0, 20);
